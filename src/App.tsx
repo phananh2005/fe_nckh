@@ -1,13 +1,20 @@
-function App() {
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 px-4 text-center dark:bg-zinc-900 dark:text-zinc-50">
-      <div className="max-w-md space-y-6">
-        <h1 className="text-5xl font-heading tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-6xl">
-          Welcome to Project!
-        </h1>
-      </div>
-    </div>
-  )
-}
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import AccountPage from "./pages/AccountPage";
 
-export default App
+export default function App() {
+  return (
+    <>
+      <Header />
+      <main className="min-h-100 bg-gray-100">
+        <Routes>
+          <Route path="/" element={<div>Content</div>} />
+          <Route path="/account" element={<AccountPage />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </>
+  );
+}

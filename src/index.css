@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap');
 @import "tailwindcss";
 
-@theme {
+:root {
   --font-sans: "Work Sans", system-ui, sans-serif;
   --font-heading: "Yeseva One", Georgia, serif;
 }
@@ -15,4 +15,117 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+.footer-circles {
+  position: absolute;
+  right: 8%;
+  top: 110px;
+  width: 380px;
+  height: 360px;
+}
+
+.circle {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 9999px;
+  background: rgba(220, 164, 59, 0.6);
+  mix-blend-mode: multiply;
+  transform-origin: top left;
+  will-change: transform, opacity;
+}
+
+.circle-left {
+  animation: moveLeftCircle 3s infinite ease-in-out;
+}
+
+.circle-top {
+  animation: moveTopCircle 3s infinite ease-in-out;
+}
+
+.circle-right {
+  animation: moveRightCircle 3s infinite ease-in-out;
+}
+
+@keyframes moveLeftCircle {
+  0%,
+  22% {
+    transform: translate(0, 58px) scale(0.94);
+    opacity: 0.8;
+  }
+
+  33%,
+  55% {
+    transform: translate(8px, 78px) scale(1);
+    opacity: 0.8;
+  }
+
+  66%,
+  88% {
+    transform: translate(40px, 74px) scale(0.37);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: translate(0, 58px) scale(0.94);
+    opacity: 0.8;
+  }
+}
+
+@keyframes moveTopCircle {
+  0%,
+  22% {
+    transform: translate(205px, 16px) scale(0.38);
+    opacity: 0.45;
+  }
+
+  33%,
+  55% {
+    transform: translate(190px, 6px) scale(0.71);
+    opacity: 0.45;
+  }
+
+  66%,
+  88% {
+    transform: translate(116px, 52px) scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(205px, 16px) scale(0.38);
+    opacity: 0.45;
+  }
+}
+
+@keyframes moveRightCircle {
+  0%,
+  22% {
+    transform: translate(178px, 142px) scale(0.73);
+    opacity: 0.45;
+  }
+
+  33%,
+  55% {
+    transform: translate(274px, 252px) scale(0.35);
+    opacity: 0.45;
+  }
+
+  66%,
+  88% {
+    transform: translate(4px, 202px) scale(0.65);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: translate(178px, 142px) scale(0.73);
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-circles {
+    opacity: 0.35;
+    right: -120px;
+  }
 }
