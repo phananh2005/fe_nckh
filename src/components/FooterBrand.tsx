@@ -4,15 +4,15 @@ function FooterBrand() {
       <h2
         className="
           font-serif
-          text-5xl
+          text-[28px]
           tracking-wider
-          text-[#C9A45D]
+          text-yellow-600
         "
       >
         BELLA WANG
       </h2>
 
-      <p className="mt-3 text-xl text-gray-800">
+      <p className="mt-2 text-[12px] text-gray-800">
         Designed for the real lives of women
       </p>
     </div>

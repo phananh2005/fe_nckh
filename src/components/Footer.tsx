@@ -16,26 +16,24 @@ function Footer() {
         className="
           relative
           z-10
-          mx-auto
-          max-w-7xl
           px-8
           py-16
-          lg:px-10
-          lg:py-20
+          lg:px-13
+          lg:py-18
         "
       >
         <div className="max-w-md">
           <FooterBrand />
         </div>
 
-        <div className="mt-14 grid gap-12 md:grid-cols-3 lg:w-[62%] lg:grid-cols-[1fr_1.25fr_1fr]">
+        <div className="mt-12 grid gap-12 md:grid-cols-3 lg:w-180 lg:grid-cols-[180px_250px_1fr] lg:gap-13.5">
           <FooterHelp />
           <FooterContact />
           <FooterSocial />
         </div>
       </div>
 
-      <div className="h-24 bg-[#EBCB88]" />
+      <div className="h-16 bg-yellow-600" />
     </footer>
   );
 }

@@ -9,15 +9,23 @@ const helpItems = [
 function FooterHelp() {
   return (
     <div>
-      <h3 className="font-semibold tracking-widest">
+      <h3
+        style={{ fontFamily: "Work Sans" }}
+        className="text-[12px] font-normal tracking-wider"
+      >
         HELP
       </h3>
 
-      <ul className="mt-6 space-y-4 text-gray-500">
+      <ul className="mt-8 space-y-3">
         {helpItems.map((item) => (
           <li
             key={item}
-            className="cursor-pointer hover:text-black"
+            className="
+        text-[12px]
+        font-normal
+        leading-5
+        text-[#000000]
+      "
           >
             {item}
           </li>

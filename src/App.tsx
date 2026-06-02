@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="min-h-100 bg-gray-100">
+      <main className="min-h-100 bg-white">
         <Routes>
           <Route path="/" element={<div>Content</div>} />
           <Route path="/account" element={<AccountPage />} />

@@ -19,18 +19,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-circles {
   position: absolute;
-  right: 8%;
-  top: 110px;
-  width: 380px;
-  height: 360px;
+  right: 6%;
+  top: 105px;
+  width: 330px;
+  height: 300px;
 }
 
 .circle {
   position: absolute;
-  width: 260px;
-  height: 260px;
+  width: 220px;
+  height: 220px;
   border-radius: 9999px;
-  background: rgba(220, 164, 59, 0.6);
+  background: var(--Color-YELLO-LIGHT, rgba(209, 139, 19, 0.5));
+
   mix-blend-mode: multiply;
   transform-origin: top left;
   will-change: transform, opacity;
@@ -58,6 +59,7 @@ h1, h2, h3, h4, h5, h6 {
   33%,
   55% {
     transform: translate(8px, 78px) scale(1);
+    background: var(--circel-yellow, rgba(209, 139, 19, 0.8));
     opacity: 0.8;
   }
 
@@ -89,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
   66%,
   88% {
     transform: translate(116px, 52px) scale(1);
+    background: var(--circel-yellow, rgba(209, 139, 19, 0.8));
     opacity: 0.8;
   }
 

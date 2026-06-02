@@ -4,84 +4,99 @@ type RegisterFormProps = {
 
 function RegisterForm({ onLoginClick }: RegisterFormProps) {
   return (
-    <div className="w-full max-w-md font-sans">
-      <h1 className="text-center text-xl  text-[#444439] mb-5">
-        Register
+    <div className="w-full max-w-md">
+      <h1
+        style={{ fontFamily: "Work Sans" }}
+        className="mb-8 text-center text-[12px] font-normal"
+      >
+        REGISTER
       </h1>
-      <div >
-        <label className="text-sm ">First Name</label>
-        <input type="text" className="border border-gray-400 "/>
-        <input type="text" className="border border-gray-400 "/>
-        <label className="text-sm ">Last Name</label>
-
-      </div>
 
       <div className="flex flex-col gap-4">
-        <label>Email</label>
-        <input
-          className="rounded-md
-            border
-            border-gray-300
-            px-3
-            py-2
-            outline-none
-            focus:border-yellow-600"
-          type="email"
-          placeholder="Enter your email"
-        />
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="Your Password"
-          className="
-            rounded-lg
-            border
-            border-gray-300
-            px-3
-            py-2
-            outline-none
-            focus:border-yellow-600
-          "
-        />
-        <label>Confirm Password</label>
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          className="
-            rounded-lg
-            border
-            border-gray-300
-            px-3
-            py-2
-            outline-none
-            focus:border-yellow-600
-          "
-        />
+        {/* First + Last Name */}
+        <div className="flex gap-4">
+          <div className="flex-1">
+            <label className="block text-[11px]">
+              First Name
+            </label>
+
+            <input
+              type="text"
+              className="h-10 w-full rounded border px-3 text-sm"
+            />
+          </div>
+
+          <div className="flex-1">
+            <label className="block text-[11px]">
+              Last Name
+            </label>
+
+            <input
+              type="text"
+              className="h-10 w-full rounded border px-3 text-sm"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-[11px]">
+            Email
+          </label>
+
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="h-10 w-full rounded border px-3 text-sm"
+          />
+        </div>
+
+        <div>
+          <label className="block text-[11px]">
+            Password
+          </label>
+
+          <input
+            type="password"
+            className="h-10 w-full rounded border px-3 text-sm"
+          />
+        </div>
+
+        <div>
+          <label className="block text-[11px]">
+            Confirm Password
+          </label>
+
+          <input
+            type="password"
+            className="h-10 w-full rounded border px-3 text-sm"
+          />
+        </div>
       </div>
 
-      <button
-        className=" mt-2
-            rounded-lg
-            bg-yellow-600
+      <div className="mt-8">
+        <button
+          className="
             w-full
-            py-3
-            font-medium
+            bg-gray-700
+            py-2.5
+            text-[11px]
             text-white
             transition
-            hover:bg-yellow-700 "
-      >
-        Register
-      </button>
-
-      <p className="mt-5 text-center text-gray-600">
-        Already have an account?
-        <button
-          onClick={onLoginClick}
-          className="ml-2 text-yellow-600 hover:underline"
+            hover:bg-black
+          "
         >
-          Login 
+          REGISTER
         </button>
-      </p>
+      </div>
+
+      <div className="mt-6 text-center text-sm">
+        <button
+          type="button"
+          onClick={onLoginClick}
+        >
+          &larr; Back to Login
+        </button>
+      </div>
     </div>
   );
 }

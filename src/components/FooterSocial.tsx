@@ -30,9 +30,10 @@ const socials = [
 function FooterSocial() {
   return (
     <div>
-      <h3 className="font-semibold tracking-widest">SOCIAL ACCOUNT</h3>
+      <h3 style={{ fontFamily: "Work Sans" }}
+        className="text-[12px] font-normal tracking-wider">SOCIAL ACCOUNT</h3>
 
-      <div className="mt-7 flex gap-4">
+      <div className="mt-7 flex gap-3">
         {socials.map((social) => (
           <a
             key={social.url}
@@ -40,14 +41,14 @@ function FooterSocial() {
             target="_blank"
             rel="noopener noreferrer"
             className="
-              flex h-5 w-5 items-center justify-center
+              flex h-4 w-4 items-center justify-center
               opacity-70
               transition
               hover:scale-110
               hover:opacity-100
             "
           >
-            <img src={social.icon} alt="" className="h-5 w-5" />
+            <img src={social.icon} alt="" className="h-4 w-4" />
           </a>
         ))}
       </div>
