@@ -9,7 +9,7 @@ const collectionsDropdown: string[] = [
   "FIRST SNOW - HOLIDAY 2025",
 ];
 
-function Bar() {
+function BarHeader() {
   return (
     <header>
       <nav className="flex justify-between items-center w-[1440px] h-[110px] pt-[60px] pb-[40px]">
@@ -91,4 +91,4 @@ function Bar() {
   );
 }
 
-export default Bar;
+export default BarHeader;
