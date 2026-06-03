@@ -1,13 +1,14 @@
-const leftItems = ["SHOP", "THE BRAND", "COLLECTIONS"];
-const rightItems = ["SEARCH", "ACCOUNT", "WIST LIST", "CART"];
-const shopDropdown = [
+const leftItems: string[] = ["SHOP", "THE BRAND", "COLLECTIONS"];
+const rightItems: string[] = ["SEARCH", "ACCOUNT", "WIST LIST", "CART"];
+const shopDropdown: string[][] = [
   ["ALL ITEMS", "NEW ARRIVALS", "ACCESSORIES"],
   ["TOPS", "BOTTOMS", "DRESS"],
 ];
-const collectionsDropdown = [
+const collectionsDropdown: string[] = [
   "SOGNO ESTIVO COLLECTION",
   "FIRST SNOW - HOLIDAY 2025",
 ];
+
 function Bar() {
   return (
     <header>
