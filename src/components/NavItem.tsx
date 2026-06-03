@@ -12,8 +12,17 @@ function NavItem({ title }: NavItemProps) {
       navigate("/account");
       return;
     }
+    if (title.toLowerCase() === "the brand") {
+      navigate("/brand");
+      return;
+    }
+    if (title.toLowerCase() === "bella wang") {
+      navigate("/");
+      return;
+    }
 
-    alert("Day la: " + title);
+
+    // alert("Day la: " + title);
   };
 
   return (

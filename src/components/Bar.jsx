@@ -8,7 +8,6 @@ const collectionsDropdown = [
   "SOGNO ESTIVO COLLECTION",
   "FIRST SNOW - HOLIDAY 2025",
 ];
-
 function Bar() {
   return (
     <header>

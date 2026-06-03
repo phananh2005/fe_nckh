@@ -1,20 +1,24 @@
 import NavItem from "./NavItem";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <header className="bg-white">
-      <nav className="relative flex h-[88px] items-center justify-between px-[52px]">
-        <div className="flex items-center gap-[72px]">
+      <nav className="relative flex h-22 items-center justify-between px-13">
+        <div className="flex items-center gap-18">
           <NavItem title="SHOP" />
           <NavItem title="THE BRAND" />
           <NavItem title="COLLECTIONS" />
         </div>
 
-        <h2 className="absolute left-1/2 -translate-x-1/2 cursor-pointer text-center font-serif text-[22px] text-yellow-600">
-          BELLA WANG
-        </h2>
+        <button className="absolute left-1/2 -translate-x-1/2 cursor-pointer text-center font-serif text-[22px] text-yellow-600"
+          onClick={()=> navigate("/")}
+        >
+          <h1>BELLA WANG</h1>
+        </button>
 
-        <div className="flex items-center gap-[88px]">
+        <div className="flex items-center gap-22">
           <NavItem title="SEARCH" />
           <NavItem title="ACCOUNT" />
           <NavItem title="WIST LIST" />
