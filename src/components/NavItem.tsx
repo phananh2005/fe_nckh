@@ -20,6 +20,10 @@ function NavItem({ title }: NavItemProps) {
       navigate("/");
       return;
     }
+    if (title.toLowerCase() === "cart") {
+      navigate("/cart");
+      return;
+    }
 
 
     // alert("Day la: " + title);

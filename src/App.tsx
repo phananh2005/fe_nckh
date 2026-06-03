@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import AccountPage from "./pages/AccountPage";
 import BrandPage from "./pages/BrandPage";
 import MainPage from "./pages/MainPage";
+import CartPage from "./pages/CartPage";
 
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<MainPage/>} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/brand" element={<BrandPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </main>
 

@@ -32,11 +32,11 @@ function MainPage() {
           setTransition(true);
           setCurrent(1);
         }, 50);
-      }, 800);
+      }, 1200);
     } else {
       timer = setTimeout(() => {
         setCurrent((prev) => prev + 1);
-      }, 800);
+      }, 1200);
     }
 
     return () => clearTimeout(timer);
@@ -92,7 +92,7 @@ function MainPage() {
             <div
               className={`flex h-full ${
                 transition
-                  ? "transition-transform duration-800 ease-in-out"
+                  ? "transition-transform duration-1200 ease-in-out"
                   : ""
               }`}
               style={{
