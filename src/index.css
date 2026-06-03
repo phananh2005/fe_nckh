@@ -13,13 +13,17 @@ body {
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
 .footer-circles {
   position: absolute;
-  right: 6%;
+  right: 12%;
   top: 105px;
   width: 330px;
   height: 300px;

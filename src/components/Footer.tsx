@@ -5,7 +5,7 @@ import FooterSocial from "./FooterSocial";
 
 function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#F7F7F7] ">
+    <footer className="relative overflow-hidden bg-[#FFFFFF] ">
       <div className="footer-circles" aria-hidden="true">
         <div className="circle circle-left"></div>
         <div className="circle circle-top"></div>
@@ -13,14 +13,7 @@ function Footer() {
       </div>
 
       <div
-        className="
-          relative
-          z-10
-          px-8
-          py-16
-          lg:px-13
-          lg:py-18
-        "
+        className=" relative z-10 px-8 py-16 lg:px-13 lg:py-18"
       >
         <div className="max-w-md">
           <FooterBrand />
