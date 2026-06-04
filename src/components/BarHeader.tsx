@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const leftItems: string[] = ["SHOP", "THE BRAND", "COLLECTIONS"];
 const rightItems: string[] = ["SEARCH", "ACCOUNT", "WIST LIST", "CART"];
 const shopDropdown: string[][] = [
@@ -10,8 +12,28 @@ const collectionsDropdown: string[] = [
 ];
 
 function BarHeader() {
+  const navigate = useNavigate();
+
+  const handleShopItemClick = (item: string) => {
+    if (item === "TOPS") {
+      navigate("/tops");
+    }
+  };
+
+  const handleCollectionsItemClick = (item: string) => {
+    if (item === "SOGNO ESTIVO COLLECTION") {
+      navigate("/collections");
+    }
+  };
+
+  const handleRightItemClick = (item: string) => {
+    if (item === "WIST LIST") {
+      navigate("/wishlist");
+    }
+  };
+
   return (
-    <header>
+    <header className="relative z-50">
       <nav className="flex justify-between items-center w-[1440px] h-[110px] pt-[60px] pb-[40px] bg-[#FFFFFF99]">
         <ul className="flex justify-between items-center w-[600px] px-[40px]">
           {leftItems.map((item) => (
@@ -35,6 +57,7 @@ function BarHeader() {
                       {column.map((label) => (
                         <li key={label}>
                           <button
+                            onClick={() => handleShopItemClick(label)}
                             className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px]
                                           font-['Work_Sans'] font-light text-[16px] leading-[24px] 
                                           transition-colors duration-200 hover:text-stone-900"
@@ -58,6 +81,7 @@ function BarHeader() {
                     {collectionsDropdown.map((label) => (
                       <li key={label}>
                         <button
+                          onClick={() => handleCollectionsItemClick(label)}
                           className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px]
                                           font-['Work_Sans'] font-light text-[16px] leading-[24px] 
                                           transition-colors duration-200 hover:text-stone-900"
@@ -82,6 +106,7 @@ function BarHeader() {
           {rightItems.map((item) => (
             <li key={`${item || "spacer"}-right`} className="relative group">
               <button
+                onClick={() => handleRightItemClick(item)}
                 className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[16px]"
                 type="button"
               >
