@@ -70,7 +70,7 @@ export default function TopsPage() {
 function groupProducts(images: string[], titles: string[], prices: string[]) {
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-[32px]">
+      <div className="grid grid-cols-1 justify-items-center gap-[32px] md:grid-cols-2 xl:grid-cols-3 pr-[32px] pl-[32px]">
         {images.map((image, index) => (
           <Product
             key={index}

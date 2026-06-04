@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import HeartShape from "./HeartShape.tsx";
 
 type ProductProps = {
@@ -15,18 +16,29 @@ export default function Product({
   price = "₫100.000",
   image,
   stateHeart = false,
-  width = 400,
-  height = 1000,
+  width = 330,
+  height = 600,
 }: ProductProps) {
   const [isHeartActive, setIsHeartActive] = useState(stateHeart);
+  const navigate = useNavigate();
 
   const handleHeartClick = () => {
     setIsHeartActive((current) => !current);
   };
 
+  const handleProductClick = () => {
+    navigate("/item-detail");
+  };
+
   return (
     <div
-      className={`flex flex-col w-[${width}px] h-[${height}px] p-1 gap-[4px] bg-white transition-all duration-300 ease-out`}
+      role="button"
+      tabIndex={0}
+      onClick={handleProductClick}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") handleProductClick();
+      }}
+      className={`cursor-pointer flex flex-col w-[${width}px] h-[${height}px] p-1 gap-[4px] bg-white transition-all duration-300 ease-out`}
     >
       <img src={image} alt={title} className="w-full h-[888px]" />
       <div className="flex w-full h-fit justify-between">
@@ -40,7 +52,10 @@ export default function Product({
         </div>
         <button
           type="button"
-          onClick={handleHeartClick}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleHeartClick();
+          }}
           aria-pressed={isHeartActive}
         >
           <HeartShape state={isHeartActive} />

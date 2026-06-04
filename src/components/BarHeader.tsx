@@ -26,9 +26,18 @@ function BarHeader() {
     }
   };
 
+  const handleLeftItemClick = (item: string) => {
+    if (item === "THE BRAND") {
+      navigate("/brand");
+    }
+  };
+
   const handleRightItemClick = (item: string) => {
     if (item === "WIST LIST") {
       navigate("/wishlist");
+    }
+    if (item === "CART") {
+      navigate("/cart");
     }
   };
 
@@ -39,6 +48,7 @@ function BarHeader() {
           {leftItems.map((item) => (
             <li key={`${item || "spacer"}-left`} className="relative group">
               <button
+                onClick={() => handleLeftItemClick(item)}
                 className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[16px]"
                 type="button"
               >
