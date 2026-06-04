@@ -65,7 +65,7 @@ export default function Deltail({
       </div>
 
       <div className="flex w-full h-fit gap-[24px]">
-        <button className="flex w-full h-[40px] gap-[4px] bg-[#000000] border: 1px solid #FFFFFF text-white">
+        <button className="flex w-full h-[40px] gap-[4px] bg-[#000000] border: 1px solid #FFFFFF text-white justify-center items-center">
           Add to card
         </button>
 
