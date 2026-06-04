@@ -1,10 +1,9 @@
-import React from "react";
 import BarHeader from "../components/BarHeader.tsx";
 import Footer from "../components/Footer.tsx";
-import ProductCard from "../components/ProductCard";
-import PageBottom from "../components/PageBottom";
+import ProductCard from "../components/shop/ProductCard.tsx";
+import Pagination from "../components/shop/Pagination.tsx";
 
-const Shop: React.FC = () => {
+function Shop() {
   return (
     <>
       <header className="relative z-10">
@@ -14,11 +13,11 @@ const Shop: React.FC = () => {
         <section className="mx-auto flex max-w-[1440px] justify-start px-[8px] py-6 sm:px-6 lg:px-10">
           <ProductCard />
         </section>
-        <PageBottom />
+        <Pagination />
         <Footer />
       </main>
     </>
   );
-};
+}
 
 export default Shop;

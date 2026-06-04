@@ -12,46 +12,32 @@ const collectionsDropdown: string[] = [
 function BarHeader() {
   return (
     <header>
-      <nav className="flex justify-between items-center w-[1440px] h-[110px] pt-[60px] pb-[40px]">
-        <ul className="flex justify-between items-center w-[600px] px-[48px]">
+      <nav className="flex justify-between items-center w-[1440px] h-[110px] pt-[60px] pb-[40px] bg-[#FFFFFF99]">
+        <ul className="flex justify-between items-center w-[600px] px-[40px]">
           {leftItems.map((item) => (
             <li key={`${item || "spacer"}-left`} className="relative group">
               <button
-                className="border-0 bg-transparent p-0 text-[13px] uppercase tracking-[0.04em] text-stone-600 transition-colors duration-200 hover:text-stone-900"
+                className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[16px]"
                 type="button"
               >
                 {item}
               </button>
 
               {item === "SHOP" ? (
-                <div className="pointer-events-none absolute left-0 top-full z-20 pt-5 opacity-0 translate-y-2 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0">
-                  <div className="min-w-[320px] rounded-[18px] border border-stone-200 bg-white/95 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.12)] backdrop-blur-sm">
-                    <div className="grid grid-cols-2 gap-x-8 gap-y-3">
-                      {shopDropdown.map((column, columnIndex) => (
-                        <ul key={columnIndex} className="space-y-3">
-                          {column.map((label) => (
-                            <li key={label}>
-                              <button
-                                className="w-full text-left border-0 bg-transparent p-0 text-[12px] tracking-[0.08em] uppercase text-stone-500 transition-colors duration-200 hover:text-stone-900"
-                                type="button"
-                              >
-                                {label}
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : item === "COLLECTIONS" ? (
-                <div className="pointer-events-none absolute left-0 top-full z-20 pt-5 opacity-0 translate-y-2 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0">
-                  <div className="min-w-[300px] rounded-[18px] border border-stone-200 bg-white/95 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.12)] backdrop-blur-sm">
-                    <ul className="space-y-3">
-                      {collectionsDropdown.map((label) => (
+                <div
+                  className="flex w-[300px] h-fi pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF]
+                  absolute top-full left-0 opacity-0 pointer-events-none 
+                  group-hover:opacity-100 group-hover:pointer-events-auto
+                  transition-all duration-300 ease-out delay-100"
+                >
+                  {shopDropdown.map((column, columnIndex) => (
+                    <ul key={columnIndex} className="space-y-3">
+                      {column.map((label) => (
                         <li key={label}>
                           <button
-                            className="w-full text-left border-0 bg-transparent p-0 text-[12px] tracking-[0.08em] uppercase text-stone-500 transition-colors duration-200 hover:text-stone-900"
+                            className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px]
+                                          font-['Work_Sans'] font-light text-[16px] leading-[24px] 
+                                          transition-colors duration-200 hover:text-stone-900"
                             type="button"
                           >
                             {label}
@@ -59,26 +45,44 @@ function BarHeader() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  ))}
+                </div>
+              ) : item === "COLLECTIONS" ? (
+                <div
+                  className="flex w-[300px] h-fi pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF]
+                  absolute top-full left-0 opacity-0 pointer-events-none 
+                  group-hover:opacity-100 group-hover:pointer-events-auto
+                  transition-all duration-300 ease-out delay-100"
+                >
+                  <ul className="space-y-3">
+                    {collectionsDropdown.map((label) => (
+                      <li key={label}>
+                        <button
+                          className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px]
+                                          font-['Work_Sans'] font-light text-[16px] leading-[24px] 
+                                          transition-colors duration-200 hover:text-stone-900"
+                          type="button"
+                        >
+                          {label}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ) : null}
             </li>
           ))}
         </ul>
 
-        <button
-          className="flex flex-1 h-[36px] px-[48px] gap-[10px] items-center text-yellow-400"
-          type="button"
-          aria-label="Bella Wang home"
-        >
+        <div className="flex items-center justify-center flex-1 h-[36px] pr-[48px] pl-[48px] gap-[10px] text-[#D18B13] font-['Yeseva_One'] font-normal text-[22px] leading-none text-center">
           BELLA WANG
-        </button>
+        </div>
 
-        <ul className="flex justify-between items-center w-[600px] px-[48px]">
+        <ul className="flex justify-between items-center w-[600px] px-[40px]">
           {rightItems.map((item) => (
-            <li key={item}>
+            <li key={`${item || "spacer"}-right`} className="relative group">
               <button
-                className="border-0 bg-transparent p-0 text-[13px] uppercase tracking-[0.04em] text-stone-600 transition-colors duration-200 hover:text-stone-900"
+                className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[16px]"
                 type="button"
               >
                 {item}
