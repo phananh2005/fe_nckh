@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const leftItems: string[] = ["SHOP", "THE BRAND", "COLLECTIONS"];
@@ -13,6 +14,21 @@ const collectionsDropdown: string[] = [
 
 function BarHeader() {
   const navigate = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleShopItemClick = (item: string) => {
     if (item === "TOPS") {
@@ -42,9 +58,12 @@ function BarHeader() {
   };
 
   return (
-    <header className="relative z-50">
-      <nav className="flex justify-between items-center w-[1440px] h-[110px] pt-[60px] pb-[40px] bg-[#FFFFFF99]">
-        <ul className="flex justify-between items-center w-[600px] px-[40px]">
+    <header className="sticky top-0 left-0 right-0 z-50">
+      <nav
+        className="w-full h-[110px] transition-all duration-300 ease-out border-b border-white/10  "
+      >
+        <div className="flex justify-between items-center w-full max-w-[1440px] mx-auto h-full py-[20px] px-4 md:px-8">
+          <ul className="flex justify-between items-center w-[600px] px-[40px]">
           {leftItems.map((item) => (
             <li key={`${item || "spacer"}-left`} className="relative group">
               <button
@@ -108,7 +127,7 @@ function BarHeader() {
           ))}
         </ul>
 
-        <div className="flex items-center justify-center flex-1 h-[36px] pr-[48px] pl-[48px] gap-[10px] text-[#D18B13] font-['Yeseva_One'] font-normal text-[22px] leading-none text-center">
+        <div className="flex items-center justify-center flex-1 h-[36px] pr-[48px] pl-[48px] gap-[10px] text-[#D18B13] font-['Yeseva_One'] font-normal text-[28px] leading-none text-center">
           BELLA WANG
         </div>
 
@@ -125,6 +144,7 @@ function BarHeader() {
             </li>
           ))}
         </ul>
+      </div>
       </nav>
     </header>
   );

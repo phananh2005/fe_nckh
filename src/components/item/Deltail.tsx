@@ -1,37 +1,43 @@
 import { useState } from "react";
 import Size from "../shop/Size.tsx";
 import HeartShape from "../shop/HeartShape.tsx";
+import { useCart } from "../../context/CartContext.tsx";
 
 type DeltailProps = {
+  id: number;
   title: string;
   price: string;
+  image: string;
   materials?: string;
   description?: string;
 };
 
 export default function Deltail({
+  id,
   title,
   price,
+  image,
   materials = "",
   description = "",
 }: DeltailProps) {
   const [selectedSize, setSelectedSize] = useState<string | undefined>("M");
   const [favorite, setFavorite] = useState(false);
+  const { addToCart } = useCart();
 
   return (
-    <div className="top-[193px] left-[769px] w-[507px] h-[511px] flex flex-col justify-between pt-8 px-8">
-      <div className="flex flex-col w-full h-fit gap-[22px]">
-        <div className="w-[443px] h-[36px] font-['Work_Sans'] font-light text-[36px] leading-[36px]">
+    <div className="top-48.25 left-192.25 w-126.75 h-127.75 flex flex-col justify-between pt-8 px-8">
+      <div className="flex flex-col w-full h-fit gap-5.5">
+        <div className="w-110.75 h-9 font-['Work_Sans'] font-light text-[36px] leading-9">
           {title}
         </div>
-        <div className="w-full h-fit font-['Work_Sans'] font-semibold text-[32px] leading-[24px]">
+        <div className="w-full h-fit font-['Work_Sans'] font-semibold text-[32px] leading-6">
           ${price}
         </div>
       </div>
 
-      <div className="flex flex-col w-full h-[160px] gap-[8px]">
-        <div className="flex flex-col w-full h-fit gap-[32px]">
-          <div className="flex items-center gap-[12px]">
+      <div className="flex flex-col w-full h-40 gap-2">
+        <div className="flex flex-col w-full h-fit gap-8">
+          <div className="flex items-center gap-3">
             <span className="font-['Work_Sans'] font-normal text-base">
               Materials:
             </span>
@@ -39,22 +45,22 @@ export default function Deltail({
               {materials}
             </span>
           </div>
-          <div className="flex w-fit h-fit gap-[18px] font-['Work_Sans'] font-normal text-base">
+          <div className="flex w-fit h-fit gap-4.5 font-['Work_Sans'] font-normal text-base">
             Description:
           </div>
         </div>
 
-        <div className="flex flex-col w-full h-full gap-[10px]">
+        <div className="flex flex-col w-full h-full gap-2.5">
           <p className="font-['Work_Sans'] font-light text-sm leading-6">
             {description}
           </p>
         </div>
       </div>
 
-      <div className="flex flex-col w-full h-fit gap-[32px]">
-        <div className="flex flex-col w-[110px] h-fit">
+      <div className="flex flex-col w-full h-fit gap-8">
+        <div className="flex flex-col w-27.5 h-fit">
           <div className="font-['Work_Sans'] font-light text-base">Size</div>
-          <div className="flex w-full h-fit gap-[8px]">
+          <div className="flex w-full h-fit gap-2">
             <Size
               sizes={["S", "M", "L"]}
               selectedSize={selectedSize}
@@ -64,16 +70,29 @@ export default function Deltail({
         </div>
       </div>
 
-      <div className="flex w-full h-fit gap-[24px]">
-        <button className="flex w-full h-[40px] gap-[4px] bg-[#000000] border: 1px solid #FFFFFF text-white justify-center items-center">
-          Add to card
+      <div className="flex w-full h-fit gap-6">
+        <button
+          type="button"
+          onClick={() =>
+            addToCart({
+              id,
+              name: title,
+              price: Number(price),
+              image,
+              size: selectedSize ?? "M",
+              quantity: 1,
+            })
+          }
+          className="flex w-full h-10 gap-1 bg-[#000000] border: 1px solid #FFFFFF text-white justify-center items-center"
+        >
+          Add to cart
         </button>
 
         <button
           type="button"
           onClick={() => setFavorite((f) => !f)}
           aria-pressed={favorite}
-          className="h-[36px] w-[36px] flex items-center justify-center"
+          className="h-9 w-9 flex items-center justify-center"
         >
           <HeartShape state={favorite} />
         </button>

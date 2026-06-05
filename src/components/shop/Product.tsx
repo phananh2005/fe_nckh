@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import HeartShape from "./HeartShape.tsx";
 
 type ProductProps = {
+  id: number;
   title?: string;
   price?: string;
   image?: string;
@@ -12,6 +13,7 @@ type ProductProps = {
 };
 
 export default function Product({
+  id,
   title = "Sản phẩm mẫu",
   price = "₫100.000",
   image,
@@ -27,7 +29,14 @@ export default function Product({
   };
 
   const handleProductClick = () => {
-    navigate("/item-detail");
+    navigate("/item-detail", {
+      state: {
+        id,
+        title,
+        price,
+        image,
+      },
+    });
   };
 
   return (
@@ -38,15 +47,15 @@ export default function Product({
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") handleProductClick();
       }}
-      className={`cursor-pointer flex flex-col w-[${width}px] h-[${height}px] p-1 gap-[4px] bg-white transition-all duration-300 ease-out`}
+      className={`cursor-pointer flex flex-col w-[${width}px] h-[${height}px] p-1 gap-1 bg-white transition-all duration-300 ease-out`}
     >
-      <img src={image} alt={title} className="w-full h-[888px]" />
+      <img src={image} alt={title} className="w-full h-222" />
       <div className="flex w-full h-fit justify-between">
         <div className="flex flex-col w-full h-fit">
-          <div className="flex w-full h-[64px] font-['Work_Sans'] font-normal text-[28px]/[32px]">
+          <div className="flex w-full h-16 font-['Work_Sans'] font-normal text-[28px]/[32px]">
             {title}
           </div>
-          <div className="flex w-full h-[28px] gap-[16px] font-['Work_Sans'] font-light text-2xl leading-7">
+          <div className="flex w-full h-7[16px] font-['Work_Sans'] font-light text-2xl leading-7">
             {`$ ${price}`}
           </div>
         </div>

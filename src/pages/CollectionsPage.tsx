@@ -12,7 +12,7 @@ import image8 from "../assets/image8.png";
 export default function CollectionsPage() {
   return (
     <>
-      <main className="flex flex-col w-full h-fit gap-[32px] py-[32px]">
+      <main className="flex flex-col w-full h-fit gap-8 py-8">
         <div className="flex justify-center font-['Work_Sans'] font-normal text-[28px]/[43.2px]">
           SOGNO ESTIVO COLLECTION
         </div>
@@ -59,10 +59,11 @@ export default function CollectionsPage() {
 function groupProducts(images: string[], titles: string[], prices: string[]) {
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-[32px]">
+      <div className="flex flex-wrap justify-center gap-8">
         {images.map((image, index) => (
           <Product
             key={index}
+            id={index + 1}
             image={image}
             title={titles[index]}
             price={prices[index]}

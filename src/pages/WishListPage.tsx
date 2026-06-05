@@ -12,7 +12,7 @@ import image from "../assets/image.png";
 export default function WishListPage() {
   return (
     <>
-      <main className="flex flex-col w-full h-fit gap-[32px] py-[32px]">
+      <main className="flex flex-col w-full h-fit gap-8 py-8">
         <div className="flex justify-center font-['Work_Sans'] font-normal text-[28px]/[43.2px]">
           WISH LIST
         </div>
@@ -59,10 +59,11 @@ export default function WishListPage() {
 function groupProducts(images: string[], titles: string[], prices: string[]) {
   return (
     <>
-      <div className="grid grid-cols-1 justify-items-center gap-[32px] md:grid-cols-2 xl:grid-cols-3 pr-[32px] pl-[32px]">
+      <div className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 xl:grid-cols-3 pr-8 pl-8">
         {images.map((image, index) => (
           <Product
             key={index}
+            id={index + 1}
             image={image}
             title={titles[index]}
             price={prices[index]}
