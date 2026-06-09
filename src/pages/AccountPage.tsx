@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import LoginForm from "../components/LoginForm";
-import RegisterForm from "../components/RegisterForm";
-import ResetPasswordForm from "../components/ResetPasswForm";
+import LoginForm from "../components/account/LoginForm";
+import RegisterForm from "../components/account/RegisterForm";
+import ResetPasswordForm from "../components/account/ResetPasswForm";
 import loginImg from "../assets/login.png";
 
 type AccountMode = "login" | "register" | "reset-password";
@@ -28,12 +28,12 @@ function AccountPage() {
   };
 
   return (
-    <div className="flex bg-white pt-22 pb-20">
-      <div className="flex w-1/2">
+    <div className="flex flex-col md:flex-row bg-white pt-10 md:pt-22 pd-10 md:pb-20">
+      <div className="sm:flex md:w-1/2 w-full hidden">
         <img
           src={loginImg}
           alt="Fashion"
-          className="h-182 w-full object-cover"
+          className="h-60 sm:h96 md:h-182 lg-h w-full object-cover"
         />
       </div>
 
