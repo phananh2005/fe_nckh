@@ -126,21 +126,21 @@ function MainPage() {
         </section>
 
         {/* SECTION 1 */}
-        <section className="relative mt-14 grid h-200 grid-cols-[46%_28%_26%]">
-          <img src={img11} alt="" className="h-full object-cover object-left" />
+        <section className="relative mt-14 grid gap-4 grid-cols-1 h-auto md:grid-cols-[46%_28%_26%] md:h-200">
+          <img src={img11} alt="" className="w-full h-auto object-cover object-left md:h-full" />
 
           <div></div>
 
           <img
             src={img12}
             alt=""
-            className="h-full w-full object-cover object-center"
+            className="w-full h-auto object-cover object-center md:h-full"
           />
 
           {/* Text */}
           <div
             style={{ fontFamily: "Work Sans" }}
-            className=" absolute top-1/2 left-[47%] -translate-y-1/2 text-[22px] leading-[1.9] z-10"
+            className="mx-auto mt-6 max-w-[320px] text-center text-[20px] leading-[1.8] z-10 md:absolute md:left-[47%] md:top-1/2 md:mx-0 md:-translate-y-1/2 md:text-[22px] md:leading-[1.9]"
           >
             <p className="-ml-2">The world shifts,</p>
 
@@ -153,17 +153,17 @@ function MainPage() {
         </section>
 
         {/* SECTION 2 */}
-        <section className="relative h-225 ">
-          <img src={img2} alt="" className="h-209 w-full object-cover" />
+        <section className="relative h-auto md:h-225">
+          <img src={img2} alt="" className="w-full h-auto object-cover md:h-209" />
 
           <h2
             style={{ fontFamily: "Work Sans" }}
-            className=" absolute right-[13%] top-[14%] text-[32px] uppercase tracking-[0.08em]"
+            className="mt-6 text-center text-[28px] uppercase tracking-[0.08em] md:absolute md:right-[13%] md:top-[14%] md:mt-0 md:text-[32px]"
           >
             solstice
           </h2>
 
-          <div className="absolute  left-[46.5%]  top-[24%]  max-w-108.75  text-[16px]  leading-[1.42]">
+          <div className="mx-auto mt-6 max-w-[320px] text-[16px] leading-[1.42] md:absolute md:left-[46.5%] md:top-[24%] md:max-w-108.75 md:mt-0">
             <p>
               The world shifts, the air stirs, and the earth
               <br />
@@ -188,14 +188,14 @@ function MainPage() {
         </section>
 
         {/* SECTION 3 */}
-        <section className="flex h-249">
-          <img src={img31} alt="" className="h-249 w-191.5 object-cover" />
+        <section className="flex flex-col gap-5 h-auto md:flex-row md:h-249">
+          <img src={img31} alt="" className="w-full h-auto object-cover md:h-249 md:w-191.5" />
 
-          <div className="relative ml-5 flex-1">
-            <div className="absolute right-0 top-25 flex flex-col items-center text-center">
+          <div className="relative flex-1 md:ml-5">
+            <div className="relative mx-auto flex flex-col items-center text-center md:absolute md:right-0 md:top-25 md:mx-0">
               <h2
                 style={{ fontFamily: "Work Sans" }}
-                className="text-[32px] font-normal uppercase"
+                className="text-[28px] font-normal uppercase md:text-[32px]"
               >
                 Solstice
               </h2>
@@ -203,7 +203,7 @@ function MainPage() {
               <img
                 src={img32}
                 alt=""
-                className="mt-10 object-cover"
+                className="mt-10 w-full object-cover md:w-auto"
               />
 
               <p className="mt-8 max-w-90 text-[16px] leading-8">

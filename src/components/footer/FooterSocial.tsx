@@ -1,8 +1,8 @@
-import facebook from "../assets/facebook.svg";
-import instagram from "../assets/insta.svg";
-import tiktok from "../assets/tiktok.svg";
-import youtube from "../assets/youtube.svg";
-import spotify from "../assets/spotify.svg";
+import facebook from "../../assets/facebook.svg";
+import instagram from "../../assets/insta.svg";
+import tiktok from "../../assets/tiktok.svg";
+import youtube from "../../assets/youtube.svg";
+import spotify from "../../assets/spotify.svg";
 
 const socials = [
   {

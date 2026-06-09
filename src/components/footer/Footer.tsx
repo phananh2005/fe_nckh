@@ -26,7 +26,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="h-16 bg-yellow-600" />
+      <div className="h-19.75  bg-yellow-600" />
     </footer>
   );
 }

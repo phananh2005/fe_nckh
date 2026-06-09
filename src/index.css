@@ -6,15 +6,16 @@
   --font-heading: "Yeseva One", Georgia, serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-sans);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {

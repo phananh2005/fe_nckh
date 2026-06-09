@@ -28,27 +28,29 @@ function AccountPage() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-white pt-10 md:pt-22 pd-10 md:pb-20">
-      <div className="sm:flex md:w-1/2 w-full hidden">
+    <div className="flex flex-col md:flex-row bg-white pt-10 md:pt-22 pb-10 md:pb-20">
+      {/* IMAGE */}
+      <div className="w-full md:w-1/2 hidden ">
         <img
           src={loginImg}
           alt="Fashion"
-          className="h-60 sm:h96 md:h-182 lg-h w-full object-cover"
+          className="h-60 sm:h-96 md:h-125 lg:h-162.5 w-full object-cover"
         />
       </div>
 
-      <div className="flex w-1/2 items-start justify-center pt-20">
+      {/* FORM */}
+      <div className="flex w-full md:w-1/2 items-start justify-center pt-10 md:pt-20 px-4 md:px-0">
         <div
           className="
-            w-full
-            max-w-95
-            rounded-lg
-            border
-            border-[#D18B13]
-            bg-white
-            px-8
-            py-7
-          "
+          w-full
+          max-w-95
+          rounded-lg
+          border
+          border-[#D18B13]
+          bg-white
+          px-6 md:px-8
+          py-6 md:py-7
+        "
         >
           {renderAccountForm()}
         </div>
