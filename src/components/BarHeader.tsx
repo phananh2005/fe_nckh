@@ -14,7 +14,7 @@ const collectionsDropdown: string[] = [
 
 function BarHeader() {
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
+  const [, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
