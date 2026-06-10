@@ -23,7 +23,7 @@ function CartActive({
   const totalQty = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div className="mx-10  bg-white py-6 px-4 text-black">
+    <div className="md:mx-10 bg-white py-6 md:px-4 text-black">
       <h2
         style={{ fontFamily: "Work Sans" }}
         className="text-center text-[28px] uppercase mb-12"
@@ -36,31 +36,31 @@ function CartActive({
         {cartItems.map((item) => (
           <div
             key={item.id}
-            className="flex gap-6 items-stretch"
+            className="flex gap-6 items-stretch flex-col md:flex-row"
           >
             {/* img */}
             <img
               src={item.image}
               alt={item.name}
-              className="w-50 h-75 object-cover shrink-0"
+              className="p-10 w-full h-auto md:w-[200px] md:h-[300px] object-cover shrink-0"
             />
 
             {/* info & controls */}
-            <div className="flex flex-col justify-between flex-1 py-1 ml-27">
+            <div className="flex flex-col justify-between flex-1 py-1 md:ml-27 mx-2 ">
               {/* Top part: Name & Price */}
               <div className="space-y-1">
-                <p className="text-[24px] ">
-                  {item.name}
-                </p>
+                <p className="text-[24px] ">{item.name}</p>
                 <p className="text-[16px]">Price: ${item.price}</p>
               </div>
 
               {/* Bottom part: Size, Qty, Total */}
-              <div className="flex items-center justify-between text-[16px]">
-                <div className="">Size: {item.size}</div>
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-[16px]">
+                <div className="flex justify-between md:contents">
+                  <div>Size: {item.size}</div>
+                  <div>Total: ${item.price * item.quantity}</div>
+                </div>
 
-                {/* number control */}
-                <div className="flex items-center border border-zinc-300">
+                <div className="flex items-center border border-zinc-300 w-fit">
                   <button
                     onClick={() => updateQuantity(item.id, -1)}
                     className="px-4 py-1 border-r border-zinc-300 hover:bg-zinc-100 font-sans font-medium text-[16px] cursor-pointer"
@@ -77,11 +77,6 @@ function CartActive({
                     +
                   </button>
                 </div>
-
-                {/* total */}
-                <div>
-                  Total: ${item.price * item.quantity}
-                </div>
               </div>
             </div>
           </div>
@@ -92,8 +87,7 @@ function CartActive({
 
       {/* total & discount summary */}
       <div className="space-y-6 text-black">
-    
-        <div className="grid grid-cols-3 text-center text-[16px]">
+        <div className="grid grid-col-2 md:grid-cols-3 text-center text-[16px]">
           <span className="text-left">Quantity</span>
           <span>
             {totalQty} {totalQty > 1 ? "items" : "item"}
@@ -103,14 +97,12 @@ function CartActive({
 
         <div className="mt-10 grid grid-cols-3 text-center text-[16px]">
           <span className="text-left ">Promotion code</span>
-          <button className="underline text-[#A6A6A6] ">
-            Promotion code
-          </button>
+          <button className="underline text-[#A6A6A6] ">Promotion code</button>
           <span></span>
         </div>
 
         <div className="flex justify-between items-center text-[24px] ">
-          <span >Subtotal</span>
+          <span>Subtotal</span>
           <span>USD {subtotal}</span>
         </div>
 
