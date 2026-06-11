@@ -102,7 +102,8 @@ function BarHeader() {
         >
           <div
             className="hidden 
-            md:flex md:flex-nowrap md:justify-between md:items-center md:w-[600px] md:px-[20px]"
+            md:flex md:flex-nowrap md:justify-between md:items-center md:w-[600px] md:px-[20px]
+            "
           >
             {leftItems.map((item) => (
               <li
@@ -111,7 +112,8 @@ function BarHeader() {
               >
                 <button
                   onClick={() => handleLeftItemClick(item)}
-                  className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[15px]"
+                  className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[15px]
+                  lg:text-[20px]"
                   type="button"
                 >
                   {item}
@@ -216,7 +218,8 @@ function BarHeader() {
               type="button"
               onClick={() => navigate("/")}
               className="flex-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-              text-center text-[#D18B13] font-['Yeseva_One'] font-normal text-[25px] leading-none transition hover:opacity-80"
+              text-center text-[#D18B13] font-['Yeseva_One'] font-normal text-[25px] leading-none transition hover:opacity-80
+              lg:text-[30px]"
             >
               BELLA WANG
             </button>
@@ -234,7 +237,8 @@ function BarHeader() {
 
           <div
             className="hidden 
-            md:flex md:flex-nowrap md:justify-between md:items-center md:w-[600px] md:px-[20px]"
+            md:flex md:flex-nowrap md:justify-between md:items-center md:w-[600px] md:px-[20px]
+            "
           >
             {rightItems.map((item) => (
               <li
@@ -243,7 +247,7 @@ function BarHeader() {
               >
                 <button
                   onClick={() => handleRightItemClick(item)}
-                  className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[15px]"
+                  className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[15px] lg:text-[20px]"
                   type="button"
                 >
                   {item}
