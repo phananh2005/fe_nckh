@@ -100,7 +100,10 @@ function MainPage() {
               }}
             >
               {slides.map((img, index) => (
-                <div key={`${img}-${index}`} className="min-w-full h-full shrink-0">
+                <div
+                  key={`${img}-${index}`}
+                  className="min-w-full h-full shrink-0"
+                >
                   <img
                     src={img}
                     alt="Hero Banner"
@@ -127,7 +130,11 @@ function MainPage() {
 
         {/* SECTION 1 */}
         <section className="relative mt-14 grid gap-4 grid-cols-1 h-auto md:grid-cols-[46%_28%_26%] md:h-200">
-          <img src={img11} alt="" className="w-full h-auto object-cover object-left md:h-full" />
+          <img
+            src={img11}
+            alt=""
+            className="w-full h-auto object-cover object-left md:h-full"
+          />
 
           <div></div>
 
@@ -140,21 +147,24 @@ function MainPage() {
           {/* Text */}
           <div
             style={{ fontFamily: "Work Sans" }}
-            className="mx-auto mt-6 max-w-[320px] text-center text-[20px] leading-[1.8] z-10 md:absolute md:left-[47%] md:top-1/2 md:mx-0 md:-translate-y-1/2 md:text-[22px] md:leading-[1.9]"
-          >
-            <p className="-ml-2">The world shifts,</p>
+            className=" mx-auto text-center text-[20px] leading-[1.8] md:absolute md:left-[47%] md:top-1/2 md:-translate-y-1/2 md:text-left md:text-[22px]">
+            <p>The world shifts,</p>
 
-            <p className="ml-29">the air stirs,</p>
+            <p className="md:pl-20">the air stirs,</p>
 
-            <p className="ml-50">and the Earth</p>
+            <p className="md:pl-40">and the Earth</p>
 
-            <p className="ml-66">breathes in quiet motion.</p>
+            <p className="md:pl-60">breathes in quiet motion.</p>
           </div>
         </section>
 
         {/* SECTION 2 */}
         <section className="relative h-auto md:h-225">
-          <img src={img2} alt="" className="w-full h-auto object-cover md:h-209" />
+          <img
+            src={img2}
+            alt=""
+            className="w-full h-auto object-cover md:h-209"
+          />
 
           <h2
             style={{ fontFamily: "Work Sans" }}
@@ -189,7 +199,11 @@ function MainPage() {
 
         {/* SECTION 3 */}
         <section className="flex flex-col gap-5 h-auto md:flex-row md:h-249">
-          <img src={img31} alt="" className="w-full h-auto object-cover md:h-249 md:w-191.5" />
+          <img
+            src={img31}
+            alt=""
+            className="w-full h-auto object-cover md:h-249 md:w-191.5"
+          />
 
           <div className="relative flex-1 md:ml-5">
             <div className="relative mx-auto flex flex-col items-center text-center md:absolute md:right-0 md:top-25 md:mx-0">

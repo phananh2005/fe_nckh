@@ -30,11 +30,11 @@ function AccountPage() {
   return (
     <div className="flex flex-col md:flex-row bg-white pt-10 md:pt-22 pb-10 md:pb-20">
       {/* IMAGE */}
-      <div className="w-full md:w-1/2 hidden ">
+      <div className="hidden md:block md:w-1/2 ">
         <img
           src={loginImg}
           alt="Fashion"
-          className="h-60 sm:h-96 md:h-125 lg:h-162.5 w-full object-cover"
+          className="md:w-[714px] md:h-[813px] object-cover"
         />
       </div>
 

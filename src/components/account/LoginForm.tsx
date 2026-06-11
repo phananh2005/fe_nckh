@@ -60,20 +60,18 @@ function LoginForm({
         <button
           className="
             mt-2
-            bg-gray-700
+            bg-[#404040]
             py-2.5
             border
-            border-white
             text-[11px]
             text-white
             transition
-            hover:bg-black
           "
         >
           LOGIN
         </button>
 
-        <button className="mt-2 w-full border border-gray-600 py-2.5 text-[11px] font-medium text-black">
+        <button className="mt-2 w-full border border-[#404040] py-2.5 text-[11px] font-medium text-black">
           LOGIN WITH GOOGLE
         </button>
       </div>
