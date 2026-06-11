@@ -24,7 +24,10 @@ export default function ImageDetail({ images }: ImageCarouselProps) {
   }
 
   return (
-    <div className="relative flex w-fit h-fit items-center justify-center bg-white">
+    <div
+      className="relative flex w-full h-2/3 items-center justify-center bg-white
+      md:w-fit"
+    >
       {images.length > 1 ? (
         <>
           <button
@@ -50,7 +53,8 @@ export default function ImageDetail({ images }: ImageCarouselProps) {
           <img
             src={images[currentIndex]}
             alt={`Product image ${currentIndex + 1}`}
-            className="h-full w-full object-cover"
+            className="max-w-full h-auto object-cover
+            md:w-full md:h-full"
           />
           <button type="button" onClick={handleNext} aria-label="Next image">
             <svg

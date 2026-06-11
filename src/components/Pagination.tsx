@@ -6,11 +6,13 @@ export default function Pagination() {
         className="flex items-center justify-center w-[24px] h-[24px] text-stone-600 hover:text-stone-900"
       >
         <svg
-          width="7"
-          height="13"
           viewBox="0 0 7 13"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="w-[7px] h-[13px]
+          sm:w-[20px] sm:h-[20px]
+          md:w-[24px] md:h-[24px]
+          lg:w-[35px] lg:h-[35px]"
         >
           <path
             fill-rule="evenodd"
@@ -25,7 +27,10 @@ export default function Pagination() {
         <button
           key={n}
           aria-label={`Page ${n}`}
-          className={`w-[24px] h-[24px] flex items-center justify-center border-[0.5px] border-black p-[4px] bg-[#FFFFFF]`}
+          className="flex items-center justify-center border-[0.5px] border-black p-[4px] bg-[#FFFFFF]
+          w-[20px] h-[20px] text-[14px]
+          md:w-[24px] md:h-[24px]  md:text-[25px]
+          lg:w-[35px] lg:h-[35px] lg:text-[32px]"
         >
           {n}
         </button>
@@ -36,8 +41,10 @@ export default function Pagination() {
         className="flex items-center justify-center w-[24px] h-[24px] text-stone-600 hover:text-stone-900"
       >
         <svg
-          width="7"
-          height="13"
+          className="w-[7px] h-[13px]
+          sm:w-[20px] sm:h-[20px]
+          md:w-[24px] md:h-[24px]
+          lg:w-[35px] lg:h-[35px]"
           viewBox="0 0 7 13"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

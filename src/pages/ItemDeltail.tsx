@@ -24,12 +24,19 @@ export default function ItemDeltail() {
     materials: "Canvas, Leather",
     description:
       "The Everyday Tote is a versatile and stylish bag designed for daily use. Made from durable canvas with leather accents, it offers ample space for your essentials while maintaining a sleek and modern look.",
-    images: [state?.image ?? image1, state?.image ?? image2, state?.image ?? image3],
+    images: [
+      state?.image ?? image1,
+      state?.image ?? image2,
+      state?.image ?? image3,
+    ],
   };
 
   return (
     <main>
-      <div className="flex w-full h-fit gap-8 justify-center">
+      <div
+        className="flex flex-col w-full h-fit gap-8 justify-center items-center
+        md:flex-row"
+      >
         <ImageDetail images={product.images} />
         <Detail
           id={product.id}

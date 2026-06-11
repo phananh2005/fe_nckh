@@ -10,8 +10,14 @@ import Pagination from "../components/Pagination.tsx";
 export default function TopsPage() {
   return (
     <>
-      <main className="flex flex-col w-full h-fit gap-8 py-8">
-        <div className="flex justify-center font-['Work_Sans'] font-normal text-[28px]/[43.2px]">
+      <main className="flex flex-col w-full h-fit gap-8 py-2">
+        <div
+          className="flex justify-center font-['Work_Sans'] font-normal 
+        text-[25px]
+        sm:text-[28px]/[43.2px]
+        md:text-[32px]/[48px]
+        lg:text-[28px]/[43.2px]"
+        >
           TOPS
         </div>
         {groupProducts(
@@ -59,7 +65,7 @@ export default function TopsPage() {
           ],
         )}
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-8">
           <Pagination />
         </div>
       </main>
@@ -70,7 +76,11 @@ export default function TopsPage() {
 function groupProducts(images: string[], titles: string[], prices: string[]) {
   return (
     <>
-      <div className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 xl:grid-cols-3 pr-8 pl-8">
+      <div
+        className="flex flex-wrap justify-center gap-8 pr-1 pl-1
+      sm:pr-3 sm:pl-3
+      md:pr-6 md:pl-6"
+      >
         {images.map((image, index) => (
           <Product
             key={index}

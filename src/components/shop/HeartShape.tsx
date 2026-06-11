@@ -1,24 +1,18 @@
 type Props = {
-  width?: number;
-  height?: number;
   state?: boolean; // true = filled, false = outline
+  className?: string;
 };
 
-export default function HeartShape({
-  width = 28,
-  height = 24,
-  state = false,
-}: Props) {
+export default function HeartShape({ state = false, className = "" }: Props) {
   if (state) {
     return (
       <svg
-        width={width}
-        height={height}
         viewBox="0 0 28 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         aria-label="Heart"
+        className={`${className}`}
       >
         <path
           d="M4.63145 0.612592C3.72138 0.989626 2.89449 1.54225 2.19803 2.2389V2.2359C0.805095 3.62813 0.0156667 5.51239 0.000230677 7.48174C-0.0152053 9.4511 0.74459 11.3475 2.11553 12.7614L12.806 23.4519C13.0873 23.7331 13.4688 23.8911 13.8665 23.8911C14.2643 23.8911 14.6457 23.7331 14.927 23.4519L25.6145 12.7629C27.0103 11.3456 27.7859 9.43198 27.7707 7.44287C27.7555 5.45377 26.9508 3.55217 25.5335 2.1564C24.1163 0.760629 22.2026 -0.0149714 20.2135 0.000218998C18.2244 0.0154094 16.3228 0.820147 14.927 2.2374C14.652 2.5124 14.2985 2.8539 13.8665 3.2619C13.4325 2.8539 13.079 2.5129 12.806 2.2389C12.1096 1.54225 11.2827 0.989626 10.3726 0.612592C9.46254 0.235558 8.48711 0.0414985 7.50203 0.0414985C6.51695 0.0414985 5.54152 0.235558 4.63145 0.612592Z"
@@ -30,13 +24,12 @@ export default function HeartShape({
 
   return (
     <svg
-      width={width}
-      height={height}
       viewBox="0 0 28 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="Heart"
+      className={`${className}`}
     >
       <path
         fillRule="evenodd"

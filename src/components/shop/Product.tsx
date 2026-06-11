@@ -8,8 +8,6 @@ type ProductProps = {
   price?: string;
   image?: string;
   stateHeart?: boolean;
-  width?: number;
-  height?: number;
 };
 
 export default function Product({
@@ -18,8 +16,6 @@ export default function Product({
   price = "₫100.000",
   image,
   stateHeart = false,
-  width = 330,
-  height = 600,
 }: ProductProps) {
   const [isHeartActive, setIsHeartActive] = useState(stateHeart);
   const navigate = useNavigate();
@@ -47,15 +43,29 @@ export default function Product({
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") handleProductClick();
       }}
-      className={`cursor-pointer flex flex-col w-[${width}px] h-[${height}px] p-1 gap-1 bg-white transition-all duration-300 ease-out`}
+      className="cursor-pointer flex flex-col bg-white transition-all duration-300 ease-out
+      w-[145px] p-1 gap-1
+      sm:w-[170px] sm:p-2
+      md:w-[235px] md:p-2
+      lg:w-[300px] lg:p-3"
     >
-      <img src={image} alt={title} className="w-full h-222" />
+      <img src={image} alt={title} className="w-full h-50 md:h-80" />
       <div className="flex w-full h-fit justify-between">
-        <div className="flex flex-col w-full h-fit">
-          <div className="flex w-full h-16 font-['Work_Sans'] font-normal text-[28px]/[32px]">
+        <div className="flex flex-col w-8/10 h-fit">
+          <div
+            className="h-10 font-['Work_Sans'] font-normal text-[20px]/[20px] mt-2 truncate
+            sm:font-normal sm:text-[22px]/[22px]
+            md:font-normal md:text-[32px]/[32px]
+        "
+          >
             {title}
           </div>
-          <div className="flex w-full h-7[16px] font-['Work_Sans'] font-light text-2xl leading-7">
+          <div
+            className="flex w-fit h-[16px] font-['Work_Sans'] font-light text-[20px]/[30px]
+            sm:font-light sm:text-[22px]/[33px]
+            md:font-light md:text-[32px]/[48px]
+            "
+          >
             {`$ ${price}`}
           </div>
         </div>
@@ -66,8 +76,13 @@ export default function Product({
             handleHeartClick();
           }}
           aria-pressed={isHeartActive}
+          className="mt-[0px] ml-2
+          md:ml-0"
         >
-          <HeartShape state={isHeartActive} />
+          <HeartShape
+            state={isHeartActive}
+            className="w-[20px] h-[20px] md:w-[24px] h-[24px] lg:w-[30px] lg:h-[30px]"
+          />
         </button>
       </div>
     </div>
