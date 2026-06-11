@@ -36,7 +36,10 @@ function BarHeader() {
       navigate("/brand");
     }
 
-    if (item === "SHOP") {
+    if (item === "SHOP" || item === "COLLECTIONS") {
+      ["SHOP", "COLLECTIONS"]
+        .filter((i) => i !== item)
+        .forEach((i) => document.getElementById(`dropdown-menu-md-${i}`)?.classList.add("hidden"));
       const dropdown = document.getElementById(`dropdown-menu-md-${item}`);
       dropdown?.classList.toggle("hidden");
     }
@@ -109,9 +112,9 @@ function BarHeader() {
                 {item === "SHOP" ? (
                   <div
                     className="flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF]
-                    absolute top-full left-0 opacity-0 pointer-events-none
-                  group-hover:opacity-100 group-hover:pointer-events-auto
-                  transition-all duration-300 ease-out delay-100"
+                    absolute top-full left-0 
+                    lg:opacity-0 lg:pointer-events-none lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto
+                    transition-all duration-300 ease-out delay-100"
                     id={`dropdown-menu-md-${item}`}
                   >
                     {shopDropdown.map((column, columnIndex) => (
@@ -135,9 +138,10 @@ function BarHeader() {
                 ) : item === "COLLECTIONS" ? (
                   <div
                     className="flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF]
-                  absolute top-full left-0 opacity-0 pointer-events-none 
-                  group-hover:opacity-100 group-hover:pointer-events-auto
-                  transition-all duration-300 ease-out delay-100"
+                    absolute top-full left-0 
+                    lg:opacity-0 lg:pointer-events-none lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto
+                    transition-all duration-300 ease-out delay-100"
+                    id={`dropdown-menu-md-${item}`}
                   >
                     <ul className="space-y-3">
                       {collectionsDropdown.map((label) => (
