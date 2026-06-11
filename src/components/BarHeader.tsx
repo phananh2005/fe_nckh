@@ -118,22 +118,63 @@ function BarHeader() {
                 </button>
 
                 {item === "SHOP" ? (
-                  <div
-                    className="flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF]
-                    absolute top-full left-0 
-                    lg:opacity-0 lg:pointer-events-none lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto
-                    transition-all duration-300 ease-out delay-100"
-                    id={`dropdown-menu-md-${item}`}
-                  >
-                    {shopDropdown.map((column, columnIndex) => (
-                      <ul key={columnIndex} className="space-y-3">
-                        {column.map((label) => (
+                  <>
+                    {/* md: JS click toggle, ẩn ở lg */}
+                    <div
+                      className="hidden lg:hidden flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF] absolute top-full left-0"
+                      id={`dropdown-menu-md-${item}`}
+                    >
+                      {shopDropdown.map((column, columnIndex) => (
+                        <ul key={columnIndex} className="space-y-3">
+                          {column.map((label) => (
+                            <li key={label}>
+                              <button
+                                onClick={() => handleShopItemClick(label)}
+                                className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px] font-['Work_Sans'] font-light text-[16px] leading-[24px] transition-colors duration-200 hover:text-stone-900"
+                                type="button"
+                              >
+                                {label}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      ))}
+                    </div>
+                    {/* lg: pure CSS hover, JS không đụng */}
+                    <div
+                      className="hidden lg:flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF] absolute top-full left-0
+                      opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 ease-out delay-100"
+                    >
+                      {shopDropdown.map((column, columnIndex) => (
+                        <ul key={columnIndex} className="space-y-3">
+                          {column.map((label) => (
+                            <li key={label}>
+                              <button
+                                onClick={() => handleShopItemClick(label)}
+                                className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px] font-['Work_Sans'] font-light text-[16px] leading-[24px] transition-colors duration-200 hover:text-stone-900"
+                                type="button"
+                              >
+                                {label}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      ))}
+                    </div>
+                  </>
+                ) : item === "COLLECTIONS" ? (
+                  <>
+                    {/* md: JS click toggle, ẩn ở lg */}
+                    <div
+                      className="hidden lg:hidden flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF] absolute top-full left-0"
+                      id={`dropdown-menu-md-${item}`}
+                    >
+                      <ul className="space-y-3">
+                        {collectionsDropdown.map((label) => (
                           <li key={label}>
                             <button
-                              onClick={() => handleShopItemClick(label)}
-                              className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px]
-                                          font-['Work_Sans'] font-light text-[16px] leading-[24px] 
-                                          transition-colors duration-200 hover:text-stone-900"
+                              onClick={() => handleCollectionsItemClick(label)}
+                              className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px] font-['Work_Sans'] font-light text-[16px] leading-[24px] transition-colors duration-200 hover:text-stone-900"
                               type="button"
                             >
                               {label}
@@ -141,32 +182,27 @@ function BarHeader() {
                           </li>
                         ))}
                       </ul>
-                    ))}
-                  </div>
-                ) : item === "COLLECTIONS" ? (
-                  <div
-                    className="flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF]
-                    absolute top-full left-0 
-                    lg:opacity-0 lg:pointer-events-none lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto
-                    transition-all duration-300 ease-out delay-100"
-                    id={`dropdown-menu-md-${item}`}
-                  >
-                    <ul className="space-y-3">
-                      {collectionsDropdown.map((label) => (
-                        <li key={label}>
-                          <button
-                            onClick={() => handleCollectionsItemClick(label)}
-                            className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px]
-                                          font-['Work_Sans'] font-light text-[16px] leading-[24px] 
-                                          transition-colors duration-200 hover:text-stone-900"
-                            type="button"
-                          >
-                            {label}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    </div>
+                    {/* lg: pure CSS hover, JS không đụng */}
+                    <div
+                      className="hidden lg:flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF] absolute top-full left-0
+                      opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 ease-out delay-100"
+                    >
+                      <ul className="space-y-3">
+                        {collectionsDropdown.map((label) => (
+                          <li key={label}>
+                            <button
+                              onClick={() => handleCollectionsItemClick(label)}
+                              className="flex items-center w-fit h-fit rounded-[20px] p-[8px] gap-[4px] font-['Work_Sans'] font-light text-[16px] leading-[24px] transition-colors duration-200 hover:text-stone-900"
+                              type="button"
+                            >
+                              {label}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
                 ) : null}
               </li>
             ))}

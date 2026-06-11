@@ -56,7 +56,7 @@ export default function Product({
             className="h-10 font-['Work_Sans'] font-normal text-[20px]/[20px] mt-2 truncate
             sm:font-normal sm:text-[22px]/[22px]
             md:font-normal md:text-[32px]/[32px]
-            lg:font-normal lg:text-[40px]/[40px]"
+        "
           >
             {title}
           </div>
@@ -64,7 +64,7 @@ export default function Product({
             className="flex w-fit h-[16px] font-['Work_Sans'] font-light text-[20px]/[30px]
             sm:font-light sm:text-[22px]/[33px]
             md:font-light md:text-[32px]/[48px]
-            lg:font-light lg:text-[40px]/[60px]"
+            "
           >
             {`$ ${price}`}
           </div>
