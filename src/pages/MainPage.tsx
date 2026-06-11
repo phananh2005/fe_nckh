@@ -46,34 +46,24 @@ function MainPage() {
 
   return (
     <>
-      {/* voucher */}
       {voucher && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="w-125 h-60 rounded-2xl bg-[#F3F3F3] p-6 text-center shadow-xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div className="w-full max-w-125 md:w-125 md:h-60 rounded-2xl bg-[#F3F3F3] p-4 md:p-6 text-center shadow-xl">
             <h1
               style={{ fontFamily: "Work Sans" }}
-              className="text-[36px] uppercase"
+              className="text-[24px] md:text-[36px] uppercase"
             >
               You Have A Voucher
             </h1>
 
-            <p className="text-[28px]">for your first order!</p>
+            <p className="text-[18px] md:text-[28px]">for your first order!</p>
 
             <button
-              className="
-              w-101
-              py-2
-              mt-6
-              bg-[#404040]
-              text-white
-              text-[14px]
-              uppercase
-              transition
-            "
+              className="w-full max-w-[250px] md:w-101 h-10 mt-6 bg-[#404040] text-white text-[12px] md:text-[14px] uppercase transition"
             >
               Get Your Voucher
             </button>
-
+            <br />
             <button
               onClick={() => setVoucher(false)}
               className="mt-2 text-[12px] text-black"
@@ -118,7 +108,7 @@ function MainPage() {
             {heroSlides.map((_, index) => (
               <span
                 key={index}
-                className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+                className={`h-2 w-2 md:h-2.5 md:w-2.5 rounded-full transition-all duration-300 ${
                   activeDot === index
                     ? "scale-110 bg-[#D18B13]"
                     : "bg-[#D9D9D9]"
@@ -129,7 +119,7 @@ function MainPage() {
         </section>
 
         {/* SECTION 1 */}
-        <section className="relative mt-14 grid gap-4 grid-cols-1 h-auto md:grid-cols-[46%_28%_26%] md:h-200">
+        <section className="relative mt-8 md:mt-14 grid gap-4 grid-cols-1 h-auto md:grid-cols-[46%_28%_26%] md:h-200">
           <img
             src={img11}
             alt=""
@@ -147,7 +137,8 @@ function MainPage() {
           {/* Text */}
           <div
             style={{ fontFamily: "Work Sans" }}
-            className=" mx-auto text-center text-[20px] leading-[1.8] md:absolute md:left-[47%] md:top-1/2 md:-translate-y-1/2 md:text-left md:text-[22px]">
+            className=" mx-auto text-center text-[20px] leading-[1.8] md:absolute md:left-[47%] md:top-1/2 md:-translate-y-1/2 md:text-left md:text-[22px]"
+          >
             <p>The world shifts,</p>
 
             <p className="md:pl-20">the air stirs,</p>

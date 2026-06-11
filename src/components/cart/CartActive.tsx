@@ -23,10 +23,10 @@ function CartActive({
   const totalQty = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div className="md:mx-10 bg-white py-6 md:px-4 text-black">
+    <div className="md:mx-10 bg-white md:py-6 md:px-4 text-black">
       <h2
         style={{ fontFamily: "Work Sans" }}
-        className="text-center text-[28px] uppercase mb-12"
+        className="text-center text-[28px] uppercase md:mb-12"
       >
         CART
       </h2>

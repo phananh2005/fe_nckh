@@ -47,7 +47,7 @@ function CartCheckout({
         CHECK OUT
       </h2>
 
-      <div className="grid grid-cols-1 gap-8 md:gap-50 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 md:gap-50 lg:grid-cols-2 ">
         <div>
           <h3
             style={{ fontFamily: "Work Sans" }}
@@ -151,21 +151,22 @@ function CartCheckout({
             </span>
           </div>
 
-          <div className="my-10 md:mt-25 md:mb-12 h-px bg-[#D18B13] opacity-60 w-full" />
+          <div className="mt-10 mb-12 md:mt-30 md:mb-12 h-px bg-[#D18B13] opacity-60 w-full" />
 
           <div className="space-y-6">
             {cartItems.map((item) => (
-              <div key={item.id} className="flex gap-4 items-start">
+            
+              <div key={item.id} className="flex flex-col items-center md:flex-row md:items-start gap-4">
                 <img
                   src={item.image}
                   alt={item.name}
                   className="w-50 h-75 object-cover shrink-0"
                 />
 
-                <div className="flex-1 flex flex-col justify-between h-75 py-2">
+                <div className="space-y-8 md:space-y-45 w-full flex-1 py-2 md:mx-10">
                   <p
                     style={{ fontFamily: "Work Sans" }}
-                    className="text-[20px] uppercase tracking-wider font-normal"
+                    className="text-[20px] uppercase tracking-wider font-normal text-center md:text-left"
                   >
                     {item.name}
                   </p>

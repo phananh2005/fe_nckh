@@ -41,16 +41,7 @@ function AccountPage() {
       {/* FORM */}
       <div className="flex w-full md:w-1/2 items-start justify-center pt-10 md:pt-20 px-4 md:px-0">
         <div
-          className="
-          w-full
-          max-w-95
-          rounded-lg
-          border
-          border-[#D18B13]
-          bg-white
-          px-6 md:px-8
-          py-6 md:py-7
-        "
+          className="w-full max-w-95 rounded-lg border border-[#D18B13] bg-white px-6 md:px-8 py-6 md:py-7"
         >
           {renderAccountForm()}
         </div>
