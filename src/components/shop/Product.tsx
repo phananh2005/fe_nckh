@@ -51,7 +51,7 @@ export default function Product({
     >
       <img src={image} alt={title} className="w-full h-50 md:h-80" />
       <div className="flex w-full h-fit justify-between">
-        <div className="flex flex-col w-9/10 h-fit">
+        <div className="flex flex-col w-8/10 h-fit">
           <div
             className="h-10 font-['Work_Sans'] font-normal text-[20px]/[20px] mt-2 truncate
             sm:font-normal sm:text-[22px]/[22px]

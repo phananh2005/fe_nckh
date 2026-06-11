@@ -12,8 +12,14 @@ import image8 from "../assets/image8.png";
 export default function CollectionsPage() {
   return (
     <>
-      <main className="flex flex-col w-full h-fit gap-8 py-8">
-        <div className="flex justify-center font-['Work_Sans'] font-normal text-[28px]/[43.2px]">
+      <main className="flex flex-col w-full h-fit gap-8 py-2">
+        <div
+          className="flex justify-center font-['Work_Sans'] font-normal 
+        text-[25px]
+        sm:text-[28px]/[43.2px]
+        md:text-[32px]/[48px]
+        lg:text-[28px]/[43.2px]"
+        >
           SOGNO ESTIVO COLLECTION
         </div>
         {groupProducts(
@@ -59,7 +65,11 @@ export default function CollectionsPage() {
 function groupProducts(images: string[], titles: string[], prices: string[]) {
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-8">
+      <div
+        className="flex flex-wrap justify-center gap-8 pr-1 pl-1
+      sm:pr-3 sm:pl-3
+      md:pr-6 md:pl-6"
+      >
         {images.map((image, index) => (
           <Product
             key={index}
@@ -67,8 +77,6 @@ function groupProducts(images: string[], titles: string[], prices: string[]) {
             image={image}
             title={titles[index]}
             price={prices[index]}
-            width={600}
-            height={1200}
           />
         ))}
       </div>

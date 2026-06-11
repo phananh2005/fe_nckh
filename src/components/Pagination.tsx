@@ -28,10 +28,9 @@ export default function Pagination() {
           key={n}
           aria-label={`Page ${n}`}
           className="flex items-center justify-center border-[0.5px] border-black p-[4px] bg-[#FFFFFF]
-          w-[7px] h-[13px]
-          sm:w-[20px] sm:h-[20px]
-          md:w-[24px] md:h-[24px]
-          lg:w-[35px] lg:h-[35px]"
+          w-[20px] h-[20px] text-[14px]
+          md:w-[24px] md:h-[24px]  md:text-[25px]
+          lg:w-[35px] lg:h-[35px] lg:text-[32px]"
         >
           {n}
         </button>
