@@ -34,8 +34,7 @@ function CartCheckout({
   setBillingDetails,
   onSubmitOrder,
 }: CartCheckoutProps) {
-  const inputClass =
-    "w-full border border-[#A6A6A6] rounded-md px-3 py-2 text-[14px]  focus:border-zinc-500 focus:outline-none bg-white";
+  const inputClass = "w-full border border-[#A6A6A6] rounded-md px-3 py-2 text-[14px]  focus:border-zinc-500 focus:outline-none bg-white";
   const labelClass = "block text-[14px]  text-zinc-700 mb-1";
 
   return (
@@ -43,16 +42,16 @@ function CartCheckout({
       {/* Title */}
       <h2
         style={{ fontFamily: "Work Sans" }}
-        className="text-center text-[28px] uppercase mb-12"
+        className="text-center text-[28px] uppercase mb-5 md:mb-12"
       >
         CHECK OUT
       </h2>
 
-      <div className="grid grid-cols-1 gap-50 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 md:gap-50 lg:grid-cols-2">
         <div>
           <h3
             style={{ fontFamily: "Work Sans" }}
-            className="text-[24px] mb-6"
+            className="text-[24px] mb-3 md:mb-6"
           >
             Billing Details
           </h3>
@@ -152,7 +151,7 @@ function CartCheckout({
             </span>
           </div>
 
-          <div className="mt-25 mb-12 h-px bg-[#D18B13] opacity-60 w-full" />
+          <div className="my-10 md:mt-25 md:mb-12 h-px bg-[#D18B13] opacity-60 w-full" />
 
           <div className="space-y-6">
             {cartItems.map((item) => (
