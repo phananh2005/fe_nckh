@@ -39,7 +39,11 @@ function BarHeader() {
     if (item === "SHOP" || item === "COLLECTIONS") {
       ["SHOP", "COLLECTIONS"]
         .filter((i) => i !== item)
-        .forEach((i) => document.getElementById(`dropdown-menu-md-${i}`)?.classList.add("hidden"));
+        .forEach((i) =>
+          document
+            .getElementById(`dropdown-menu-md-${i}`)
+            ?.classList.add("hidden"),
+        );
       const dropdown = document.getElementById(`dropdown-menu-md-${item}`);
       dropdown?.classList.toggle("hidden");
     }
@@ -63,12 +67,16 @@ function BarHeader() {
   const handleShopItemClick = (item: string) => {
     if (item === "TOPS") {
       navigate("/tops");
+      const dropdown = document.getElementById("dropdown-menu-md-SHOP");
+      dropdown?.classList.toggle("hidden");
     }
   };
 
   const handleCollectionsItemClick = (item: string) => {
     if (item === "SOGNO ESTIVO COLLECTION") {
       navigate("/collections");
+      const dropdown = document.getElementById("dropdown-menu-md-COLLECTIONS");
+      dropdown?.classList.toggle("hidden");
     }
   };
 
@@ -89,8 +97,8 @@ function BarHeader() {
       <nav className="w-full transition-all duration-300 ease-out border-b border-white/10 bg-white/90 backdrop-blur-sm">
         <div
           className="flex items-center justify-between 
-          w-full max-w-[1440px] mx-auto py-[20px] px-4 gap-3 
-          md:px-8"
+          w-full max-w-[1440px] mx-auto py-[20px] gap-3 
+          md:px-2"
         >
           <div
             className="hidden 
@@ -165,13 +173,13 @@ function BarHeader() {
           </div>
 
           <div
-            className="flex items-center
-            w-full md:w-auto"
+            className="flex items-center relative
+            w-full md:w-auto md:px-[65px]"
           >
             <button
               type="button"
               onClick={() => navigate("/")}
-              className="flex-1 
+              className="flex-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
               text-center text-[#D18B13] font-['Yeseva_One'] font-normal text-[25px] leading-none transition hover:opacity-80"
             >
               BELLA WANG
