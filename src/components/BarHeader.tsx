@@ -29,6 +29,34 @@ function BarHeader() {
     };
   }, []);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleLeftItemClick = (item: string) => {
+    if (item === "THE BRAND") {
+      navigate("/brand");
+    }
+
+    if (item === "SHOP") {
+      const dropdown = document.getElementById(`dropdown-menu-md-${item}`);
+      dropdown?.classList.toggle("hidden");
+    }
+
+    if (menuOpen) {
+      if (item === "THE BRAND") {
+        navigate("/brand");
+        setMenuOpen(false);
+      }
+      const toggle = document.getElementById(`dropdown-toggle-${item}`);
+      if (toggle) {
+        toggle.classList.toggle("rotate-45");
+      }
+      const dropdown = document.getElementById(`dropdown-menu-${item}`);
+      if (dropdown) {
+        dropdown.classList.toggle("hidden");
+      }
+    }
+  };
+
   const handleShopItemClick = (item: string) => {
     if (item === "TOPS") {
       navigate("/tops");
@@ -38,12 +66,6 @@ function BarHeader() {
   const handleCollectionsItemClick = (item: string) => {
     if (item === "SOGNO ESTIVO COLLECTION") {
       navigate("/collections");
-    }
-  };
-
-  const handleLeftItemClick = (item: string) => {
-    if (item === "THE BRAND") {
-      navigate("/brand");
     }
   };
 
@@ -59,18 +81,26 @@ function BarHeader() {
     }
   };
 
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <header className="sticky top-0 left-0 right-0 z-50">
       <nav className="w-full transition-all duration-300 ease-out border-b border-white/10 bg-white/90 backdrop-blur-sm">
-        <div className="flex flex-wrap md:flex-nowrap items-center justify-between w-full max-w-[1440px] mx-auto py-[20px] px-4 gap-3 md:px-8">
-          <div className="hidden md:flex md:flex-nowrap justify-between items-center w-[600px] px-[40px]">
+        <div
+          className="flex items-center justify-between 
+          w-full max-w-[1440px] mx-auto py-[20px] px-4 gap-3 
+          md:px-8"
+        >
+          <div
+            className="hidden 
+            md:flex md:flex-nowrap md:justify-between md:items-center md:w-[600px] md:px-[20px]"
+          >
             {leftItems.map((item) => (
-              <li key={`${item || "spacer"}-left`} className="list-none relative group">
+              <li
+                key={`${item || "spacer"}-left`}
+                className="list-none relative group"
+              >
                 <button
                   onClick={() => handleLeftItemClick(item)}
-                  className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[16px]"
+                  className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[15px]"
                   type="button"
                 >
                   {item}
@@ -79,9 +109,10 @@ function BarHeader() {
                 {item === "SHOP" ? (
                   <div
                     className="flex w-[300px] h-fit pt-[4px] pr-[8px] pb-[4px] pl-[8px] gap-[37px] bg-[#FFFFFF]
-                  absolute top-full left-0 opacity-0 pointer-events-none
+                    absolute top-full left-0 opacity-0 pointer-events-none
                   group-hover:opacity-100 group-hover:pointer-events-auto
                   transition-all duration-300 ease-out delay-100"
+                    id={`dropdown-menu-md-${item}`}
                   >
                     {shopDropdown.map((column, columnIndex) => (
                       <ul key={columnIndex} className="space-y-3">
@@ -129,30 +160,42 @@ function BarHeader() {
             ))}
           </div>
 
-          <div className="flex items-center justify-between w-full md:w-auto">
+          <div
+            className="flex items-center
+            w-full md:w-auto"
+          >
             <button
               type="button"
-              onClick={() => navigate('/')}
-              className="flex-1 text-center text-[#D18B13] font-['Yeseva_One'] font-normal text-[28px] leading-none transition hover:opacity-80"
+              onClick={() => navigate("/")}
+              className="flex-1 
+              text-center text-[#D18B13] font-['Yeseva_One'] font-normal text-[25px] leading-none transition hover:opacity-80"
             >
               BELLA WANG
             </button>
 
             <button
               type="button"
-              className="md:hidden rounded border border-[#D18B13] px-3 py-2 text-xl text-[#D18B13] transition hover:bg-[#D18B13]/10"
+              className="rounded border border-[#D18B13] px-3 py-2 text-xl text-[#D18B13] transition hover:bg-[#D18B13]/10
+                        ml-auto
+                        md:hidden"
               onClick={() => setMenuOpen((prev) => !prev)}
             >
               ☰
             </button>
           </div>
 
-          <div className="hidden md:flex md:flex-nowrap justify-between items-center w-[600px] px-[40px]">
+          <div
+            className="hidden 
+            md:flex md:flex-nowrap md:justify-between md:items-center md:w-[600px] md:px-[20px]"
+          >
             {rightItems.map((item) => (
-              <li key={`${item || "spacer"}-right`} className="list-none relative group">
+              <li
+                key={`${item || "spacer"}-right`}
+                className="list-none relative group"
+              >
                 <button
                   onClick={() => handleRightItemClick(item)}
-                  className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[16px]"
+                  className="flex-col w-fit h-fit font-['Work_Sans'] font-light text-[15px]"
                   type="button"
                 >
                   {item}
@@ -163,70 +206,74 @@ function BarHeader() {
         </div>
 
         {menuOpen && (
-          <div className="md:hidden border-t border-[#D18B13]/20 bg-white px-4 pb-4 pt-3">
-            <div className="flex flex-col gap-2">
-              {leftItems.map((item) => (
+          <div className="flex flex-col gap-2 border-t border-[#D18B13]/20 bg-white px-4 pb-4 pt-3">
+            {leftItems.map((item) => (
+              <>
                 <button
                   key={item}
                   type="button"
                   onClick={() => {
                     handleLeftItemClick(item);
-                    setMenuOpen(false);
                   }}
-                  className="w-full text-left rounded bg-[#F9F7F0] px-3 py-3 text-[16px] font-['Work_Sans'] font-light transition hover:bg-[#F0E8D7]"
+                  className="flex justify-between w-full text-left rounded bg-[#F9F7F0] px-3 py-3 text-[16px] font-['Work_Sans'] font-light transition hover:bg-[#F0E8D7]"
                 >
                   {item}
+                  {item === "SHOP" || item === "COLLECTIONS" ? (
+                    <span className="ml-2" id={`dropdown-toggle-${item}`}>
+                      +
+                    </span>
+                  ) : null}
                 </button>
-              ))}
-
-              <div className="mt-2 border-t border-[#D18B13]/10 pt-2" />
-
-              {shopDropdown.flat().map((label) => (
-                <button
-                  key={label}
-                  type="button"
-                  onClick={() => {
-                    handleShopItemClick(label);
-                    setMenuOpen(false);
-                  }}
-                  className="w-full text-left rounded px-3 py-2 text-[14px] text-[#4B4B4B] transition hover:bg-[#F0E8D7]"
+                <div
+                  className="hidden mt-2 border-t border-[#D18B13]/10 pt-2"
+                  id={`dropdown-menu-${item}`}
                 >
-                  {label}
-                </button>
-              ))}
+                  {item === "SHOP"
+                    ? shopDropdown.flat().map((label) => (
+                        <button
+                          key={label}
+                          type="button"
+                          onClick={() => {
+                            handleShopItemClick(label);
+                            setMenuOpen(false);
+                          }}
+                          className="w-full text-left rounded px-3 py-2 text-[14px] text-[#4B4B4B] transition hover:bg-[#F0E8D7]"
+                        >
+                          {label}
+                        </button>
+                      ))
+                    : item === "COLLECTIONS"
+                      ? collectionsDropdown.map((label) => (
+                          <button
+                            key={label}
+                            type="button"
+                            onClick={() => {
+                              handleCollectionsItemClick(label);
+                              setMenuOpen(false);
+                            }}
+                            className="w-full text-left rounded px-3 py-2 text-[14px] text-[#4B4B4B] transition hover:bg-[#F0E8D7]"
+                          >
+                            {label}
+                          </button>
+                        ))
+                      : null}
+                </div>
+              </>
+            ))}
 
-              <div className="mt-2 border-t border-[#D18B13]/10 pt-2" />
-
-              {collectionsDropdown.map((label) => (
-                <button
-                  key={label}
-                  type="button"
-                  onClick={() => {
-                    handleCollectionsItemClick(label);
-                    setMenuOpen(false);
-                  }}
-                  className="w-full text-left rounded px-3 py-2 text-[14px] text-[#4B4B4B] transition hover:bg-[#F0E8D7]"
-                >
-                  {label}
-                </button>
-              ))}
-
-              <div className="mt-2 border-t border-[#D18B13]/10 pt-2" />
-
-              {rightItems.map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() => {
-                    handleRightItemClick(item);
-                    setMenuOpen(false);
-                  }}
-                  className="w-full text-left rounded bg-[#F9F7F0] px-3 py-3 text-[16px] font-['Work_Sans'] font-light transition hover:bg-[#F0E8D7]"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
+            {rightItems.map((item) => (
+              <button
+                key={item}
+                type="button"
+                onClick={() => {
+                  handleRightItemClick(item);
+                  setMenuOpen(false);
+                }}
+                className="w-full text-left rounded bg-[#F9F7F0] px-3 py-3 text-[16px] font-['Work_Sans'] font-light transition hover:bg-[#F0E8D7]"
+              >
+                {item}
+              </button>
+            ))}
           </div>
         )}
       </nav>
