@@ -218,7 +218,7 @@ function BarHeader() {
               type="button"
               onClick={() => navigate("/")}
               className="flex-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-              text-center text-[#D18B13] font-['Yeseva_One'] font-normal text-[25px] leading-none transition hover:opacity-80
+              text-center text-[#D18B13] font-['Yeseva_One'] font-normal text-[20px] leading-none transition hover:opacity-80
               lg:text-[30px]"
             >
               BELLA WANG
